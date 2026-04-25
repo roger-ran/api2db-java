@@ -1,0 +1,41 @@
+# API2DB 中间件 Spring Boot 配置文件
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: api2db-middleware
+
+  # 禁用 Spring Boot 默认 DataSource 自动配置（使用动态数据源）
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+  # Jackson JSON 配置
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      indent_output: false
+
+# 日志配置
+logging:
+  level:
+    root: INFO
+    com.example.api2db: DEBUG
+    org.springframework.jdbc: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+# 配置文件路径
+config:
+  file: /config/config.yaml
+
+# 安全配置
+security:
+  whitelist:
+    file: /config/whitelist.txt
+  blacklist:
+    file: /config/blacklist.txt

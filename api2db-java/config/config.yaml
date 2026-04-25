@@ -1,0 +1,45 @@
+# API2DB 数据库连接配置文件
+# 此文件映射 API Key 到具体的数据库连接配置
+
+auth_config:
+  # 示例 API Key 1
+  - api_key: "agent-001"
+    connections:
+      # MySQL 数据库连接示例
+      - id: "mysql-db"
+        type: "mysql"
+        host: "192.168.0.173"
+        port: 3306
+        username: "root"
+        password: "password"
+        database: "yourdb"
+
+      # PostgreSQL 数据库连接示例
+      - id: "postgres-db"
+        type: "postgresql"
+        host: "192.168.1.101"
+        port: 5432
+        username: "postgres"
+        password: "postgres123"
+        database: "test_db"
+
+  # 示例 API Key 2
+  - api_key: "agent-002"
+    connections:
+      # Oracle 数据库连接示例
+      - id: "oracle-db"
+        type: "oracle"
+        host: "192.168.1.102"
+        port: 1521
+        username: "system"
+        password: "oracle123"
+        database: "XE"
+
+      # SQL Server 数据库连接示例
+      - id: "sqlserver-db"
+        type: "sqlserver"
+        host: "192.168.1.103"
+        port: 1433
+        username: "sa"
+        password: "SqlServer123"
+        database: "test_db"

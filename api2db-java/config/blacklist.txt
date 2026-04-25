@@ -1,0 +1,21 @@
+# SQL 黑名单配置文件
+# 严禁执行的 SQL 关键字（不区分大小写）
+# 每行一个关键字，# 开头的行为注释
+
+DROP
+TRUNCATE
+ALTER
+CREATE
+DELETE  # 如果需要允许删除操作，可以移除此行
+GRANT
+REVOKE
+EXEC
+EXECUTE
+EXECUTE IMMEDIATE
+ANALYZE
+OPTIMIZE
+REPAIR
+IMPORT
+EXPORT
+BACKUP
+RESTORE
